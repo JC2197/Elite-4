@@ -25,12 +25,13 @@ public class PlayerScript : MonoBehaviour
     float timer;
     Vector2 direction;
     private Vector2 pointerInput;
-    private WeaponParent weaponParent;
+    private WeaponAccessory weaponAccessory;
+    private weaponScript weapon;
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
     private void Start(){
-        weaponParent = GetComponentInChildren<WeaponParent>();
+        weaponAccessory = GetComponentInChildren<WeaponAccessory>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         isDead = false;
@@ -40,8 +41,12 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         if(isDead == false){
+            
+            //LINK UP WEAPON ACCESSORY WITH CURSOR
             pointerInput = GetPointerInput();
-            weaponParent.PointerPosition = pointerInput;
+            weaponAccessory.PointerPosition = pointerInput;
+
+            
             direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
             body.velocity = direction * walkSpeed;
             takeDamage();
@@ -99,6 +104,8 @@ public class PlayerScript : MonoBehaviour
             spriteRenderer.flipX = false;
         }
     }
+
+    Vector3 weaponPosition;
     List<Sprite> GetSpriteDirection(){
         HandleSpriteFlip();
         List<Sprite> selectedSprites = null;
