@@ -7,14 +7,14 @@ public class PlayerScript : MonoBehaviour
 
     public Rigidbody2D body;
     public Collider playerCollider;
-    
     public SpriteRenderer spriteRenderer;
     public Health health;
+    private Animator anim;
     public int maxHealth = 100;
     public int currentHealth; 
     
     public string currDirection = "NORTH";
-    private Animator anim;
+    
     public bool isDead = false;
     public float walkSpeed;
     public float frameRate;
@@ -31,7 +31,8 @@ public class PlayerScript : MonoBehaviour
     private void Start(){
         weapon = GetComponentInChildren<weaponScript>();
         weaponAccessory = GetComponentInChildren<WeaponAccessory>();
-        health = GetComponentInChildren<Health>();
+        health = GetComponent<Health>();
+        Spawn();
     }
     private void Awake(){
         body = GetComponent<Rigidbody2D>();
@@ -74,9 +75,8 @@ public class PlayerScript : MonoBehaviour
         
     }
     private void Spawn(){
-        currentHealth = maxHealth;
-        health.healthbar.SetMaxHealth(maxHealth);
+        health.ResetHealth();
         player.transform.position = respawnPoint.transform.position;
-        Invoke(nameof(Start), 2);
+
     }
 }

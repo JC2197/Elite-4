@@ -11,6 +11,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthbar = GetComponentInChildren<HealthBar>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
@@ -22,4 +23,9 @@ public class Health : MonoBehaviour
             isDead = true;
         }
     }
+    public void ResetHealth(){
+        currentHealth = maxHealth;
+        healthbar.SetMaxHealth(maxHealth);
+    }
+    
 }

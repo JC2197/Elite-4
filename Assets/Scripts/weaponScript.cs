@@ -6,7 +6,7 @@ public class weaponScript : MonoBehaviour
 {
     PlayerScript player;
     void Start(){
-        GetComponentInParent<PlayerScript>();
+        player = GetComponentInParent<PlayerScript>();
     }
     void Update()
     {

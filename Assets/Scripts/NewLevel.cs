@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 public class EndTrigger : MonoBehaviour
 {
  
-    public GameObject levelCompleteUI;
  
  
     [SerializeField] private string newLevel;
@@ -15,7 +14,6 @@ public class EndTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
  
-            levelCompleteUI.SetActive(true);
            
             SceneManager.LoadScene(newLevel);
  
