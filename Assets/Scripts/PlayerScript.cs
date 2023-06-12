@@ -7,51 +7,65 @@ public class PlayerScript : MonoBehaviour
 
     public Rigidbody2D body;
     public Collider playerCollider;
+    
+    public SpriteRenderer spriteRenderer;
+    public Health health;
     public int maxHealth = 100;
     public int currentHealth; 
-    public HealthBar healthbar;
-    public SpriteRenderer spriteRenderer;
+    
     public string currDirection = "NORTH";
-    public List<Sprite> nSprites;
-    public List<Sprite> nwSprites;
-    public List<Sprite> wSprites;
-    public List<Sprite> sSprites;
-    public List<Sprite> swSprites;
+    private Animator anim;
     public bool isDead = false;
     public float walkSpeed;
     public float frameRate;
     // Start is called before the first frame update
     float idleTime;
     float timer;
-    Vector2 direction;
+    public Vector2 direction;
     private Vector2 pointerInput;
-    private WeaponParent weaponParent;
+    private WeaponAccessory weaponAccessory;
+    public weaponScript weapon;
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
     private void Start(){
-        weaponParent = GetComponentInChildren<WeaponParent>();
-        currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
-        isDead = false;
+        weapon = GetComponentInChildren<weaponScript>();
+        weaponAccessory = GetComponentInChildren<WeaponAccessory>();
+        health = GetComponentInChildren<Health>();
     }
-
+    private void Awake(){
+        body = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if(isDead == false){
+        if(health.isDead == false){ 
+            //LINK UP WEAPON ACCESSORY WITH CURSOR
             pointerInput = GetPointerInput();
-            weaponParent.PointerPosition = pointerInput;
-            direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-            body.velocity = direction * walkSpeed;
-            takeDamage();
-            setSprite();
+            weaponAccessory.PointerPosition = pointerInput;
+            Move();
+            Animate();
         }else{
-            direction.x = 0;
-            direction.y = 0;
-            body.velocity = direction * walkSpeed;
             Spawn();
         }
+    }
+    private void Move(){
+        float Horizontal = Input.GetAxis("Horizontal");
+        float Vertical = Input.GetAxis("Vertical");
+        if(Horizontal == 0 && Vertical == 0){
+            body.velocity = new Vector2(0,0);
+            anim.Play("IdleTree", 0, 0.01f);
+            anim.SetBool("IsMoving", false);
+        }else{
+            anim.SetBool("IsMoving", true);
+            direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+            body.velocity = direction * walkSpeed * Time.fixedDeltaTime;
+        }
+    }
+    private void Animate(){
+        anim.SetFloat("MovementX", direction.x);
+        anim.SetFloat("MovementY", direction.y);
     }
     private Vector2 GetPointerInput(){
         Vector3 mousePos = Input.mousePosition;
@@ -59,85 +73,10 @@ public class PlayerScript : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePos);
         
     }
-    void takeDamage(){
-        if(Input.GetKeyDown(KeyCode.Space)){
-            TakeDamage(20);
-            
-        }
-    }
-    void TakeDamage(int damage){
-        currentHealth -=damage;
-        healthbar.SetHealth(currentHealth);
-        if(currentHealth==0){
-            isDead = true;
-        }
-    }
     private void Spawn(){
         currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
+        health.healthbar.SetMaxHealth(maxHealth);
         player.transform.position = respawnPoint.transform.position;
         Invoke(nameof(Start), 2);
-    }
-    void setSprite(){
-        List<Sprite> directionSprites = GetSpriteDirection();
-
-        if(directionSprites != null){
-
-            float playTime = Time.time - idleTime; //time since we started walking
-            int totalFrames = (int)(playTime * frameRate); //total frames
-            int frame = totalFrames % directionSprites.Count; //current frame
-            spriteRenderer.sprite = directionSprites[frame];
-        }else{
-            idleTime = Time.time;
-        }
-    }
-    void HandleSpriteFlip(){
-        if(!spriteRenderer.flipX && direction.x > 0){
-            spriteRenderer.flipX = true;
-            
-        }else if(spriteRenderer.flipX && direction.x < 0){
-            spriteRenderer.flipX = false;
-        }
-    }
-    List<Sprite> GetSpriteDirection(){
-        HandleSpriteFlip();
-        List<Sprite> selectedSprites = null;
-
-        if(direction.y > 0){ //north
-            if(Mathf.Abs(direction.x) > 0){ //east/west
-                selectedSprites = nwSprites;
-                currDirection = "NORTHWEST";
-            }else{//neutral X
-                selectedSprites = nSprites;
-                currDirection = "NORTH";
-            }
-
-        }else if(direction.y < 0){
-            if(Mathf.Abs(direction.x) > 0){
-                selectedSprites = swSprites;
-                currDirection = "SOUTHWEST";
-            }else{
-                selectedSprites = sSprites;
-                currDirection = "SOUTH";
-            }
-
-        }else{
-            if(Mathf.Abs(direction.x) > 0){
-                selectedSprites = wSprites;
-                currDirection = "WEST";
-            }
-        }
-        if(spriteRenderer.flipX == true){
-            if(currDirection == "NORTHWEST"){
-                    currDirection = "NORTHEAST";
-                }
-            if(currDirection == "WEST"){
-                    currDirection  = "EAST";
-                } 
-            if (currDirection == "SOUTHWEST"){
-                    currDirection = "SOUTHEAST";
-                }
-        }
-        return selectedSprites; 
     }
 }
