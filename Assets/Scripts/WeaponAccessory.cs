@@ -6,6 +6,7 @@ public class WeaponAccessory : MonoBehaviour
     {
     public Vector2 PointerPosition {get;set;}
     public PlayerScript characterScript;
+
     private void Start(){
         characterScript = GetComponentInParent<PlayerScript>();
     }
