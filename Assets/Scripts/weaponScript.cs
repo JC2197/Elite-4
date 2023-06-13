@@ -12,9 +12,12 @@ public class weaponScript : MonoBehaviour
     private bool attacking = false;
     private float timer = 0f;
     private float timeToAttack = .25f;
-    void Start(){
-        
+    playerCollider charCollider;
+    private BoxCollider2D weaponCollider;
+
+    void Start(){        
         player = GetComponentInParent<PlayerScript>();
+        charCollider = GetComponentInParent<playerCollider>();
     }
     void Update()
     {   
@@ -30,13 +33,20 @@ public class weaponScript : MonoBehaviour
             if(timer >= timeToAttack){
                 timer = 0;
                 attacking = false;
+                weaponCollider.enabled = !weaponCollider.enabled;
             }
         }
     }
     public void Attack(){
         if (attacking){
             return;
-        }if(player.currDirection == "NORTHWEST"){
+        }
+        weaponCollider = GetComponent<BoxCollider2D>();
+        weaponCollider.enabled = !weaponCollider.enabled;
+
+        charCollider.StartCoroutine(charCollider.AttackInvulnerability());
+
+        if (player.currDirection == "NORTHWEST"){
             transform.localPosition = new Vector3(-0.03f,0f,0.5f);
             transform.localRotation = Quaternion.Euler(0,0,42f);
             transform.localScale = new Vector3(1f,1f,1);

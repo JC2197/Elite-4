@@ -30,12 +30,12 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     private void Start(){
         weapon = GetComponentInChildren<weaponScript>();
-        health = GetComponent<Health>();
+        health = GetComponentInChildren<Health>();
         Spawn();
     }
     private void Awake(){
-        body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        body = GetComponentInChildren<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     void Update()

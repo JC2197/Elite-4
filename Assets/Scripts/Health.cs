@@ -15,12 +15,16 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
-        void TakeDamage(int damage){
+        public void TakeDamage(int damage){
         currentHealth -=damage;
         healthbar.SetHealth(currentHealth);
         
-        if(currentHealth==0){
+        if(currentHealth<=0){
             isDead = true;
+            if (gameObject.CompareTag("Enemy") & isDead)
+            {
+                Destroy(gameObject, 0);
+            }
         }
     }
     public void ResetHealth(){
