@@ -9,7 +9,8 @@ public class EnemyChase : MonoBehaviour
     Transform target;
     Vector3 self;
     Vector2 moveDirection;
-
+    private bool hasTarget = false;
+    public float distanceToTarget;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,15 +21,18 @@ public class EnemyChase : MonoBehaviour
     {
         target = GameObject.Find("Character").transform;
         self = transform.position;
+        distanceToTarget = Vector3.Distance(self, target.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        distanceToTarget = Vector3.Distance(self, target.position);
+        if(distanceToTarget < 3f){
+            hasTarget = true;
+        }
         transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y*.001f));
-
-        if(target)
+        if(target && hasTarget)
         {
             Vector2 direction = (target.position - transform.position).normalized;
             //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //not required
