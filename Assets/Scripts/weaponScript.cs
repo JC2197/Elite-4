@@ -58,7 +58,7 @@ public class weaponScript : MonoBehaviour
         }
         if(player.currDirection == "SOUTHEAST"){
             transform.localPosition = new Vector3(-0.038f,-0.024f,-0.5f);     
-            transform.localRotation = Quaternion.Euler(0,0,-19.5f);              
+            transform.localRotation = Quaternion.Euler(0,0,-134f);              
             transform.localScale = new Vector3(1f,1f,1);
         }
         if(player.currDirection == "SOUTH"){
