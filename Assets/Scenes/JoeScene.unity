@@ -3566,7 +3566,6 @@ GameObject:
   - component: {fileID: 1425338638}
   - component: {fileID: 1425338639}
   - component: {fileID: 1425338640}
-  - component: {fileID: 1425338641}
   - component: {fileID: 1425338642}
   m_Layer: 0
   m_Name: Weapon
@@ -3583,7 +3582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425338637}
   m_LocalRotation: {x: -0, y: -0, z: 0.083370455, w: 0.9965187}
-  m_LocalPosition: {x: 0.056, y: 0.005, z: 0.49999997}
+  m_LocalPosition: {x: 0.066, y: -0.033, z: 0.49999997}
   m_LocalScale: {x: 1, y: 0.7902, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3656,27 +3655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.5
-  weaponAnim: {fileID: 1425338641}
---- !u!95 &1425338641
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425338637}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92ba010da59a09e4f96a7484cf162f07, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1425338642
 BoxCollider2D:
   m_ObjectHideFlags: 0

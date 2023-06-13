@@ -40,10 +40,9 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetDirection();
         if(health.isDead == false){ 
             //LINK UP WEAPON ACCESSORY WITH CURSOR
-            
             Move();
             Animate();
         }else{
@@ -74,9 +73,9 @@ public class PlayerScript : MonoBehaviour
     private void Spawn(){
         health.ResetHealth();
         player.transform.position = respawnPoint.transform.position;
-
+        health.isDead = false;
     }
-    private void GetSwordSpriteDirection(){
+    private void GetDirection(){
         if(
             direction.y > 0){ //north..
             if(direction.x < 0){ //west
