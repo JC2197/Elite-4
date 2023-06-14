@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/WeaponAccessory.cs.meta
-guid: 63b08c8808984c143b833268cc8e7191
-========
-guid: 1b9ccf9c046e38140b49710d99e52136
->>>>>>>> master:Assets/Scripts/EnemyChase.cs.meta
+guid: d1bf4c5c99e0f5947abbf5deb7fb120c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -23,28 +23,26 @@ public class PlayerScript : MonoBehaviour
     float timer;
     public Vector2 direction;
     private Vector2 pointerInput;
-    private WeaponAccessory weaponAccessory;
-    public weaponScript weapon;
+    private weaponScript weapon;
+    
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
     private void Start(){
         weapon = GetComponentInChildren<weaponScript>();
-        weaponAccessory = GetComponentInChildren<WeaponAccessory>();
-        health = GetComponent<Health>();
+        health = GetComponentInChildren<Health>();
         Spawn();
     }
     private void Awake(){
-        body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        body = GetComponentInChildren<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
+        GetDirection();
         if(health.isDead == false){ 
             //LINK UP WEAPON ACCESSORY WITH CURSOR
-            pointerInput = GetPointerInput();
-            weaponAccessory.PointerPosition = pointerInput;
             Move();
             Animate();
         }else{
@@ -59,7 +57,6 @@ public class PlayerScript : MonoBehaviour
             anim.Play("IdleTree", 0, 0.01f);
             anim.SetBool("IsMoving", false);
         }else{
-            anim.SetBool("IsMoving", true);
             direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
             body.velocity = direction * walkSpeed * Time.fixedDeltaTime;
         }
@@ -71,12 +68,41 @@ public class PlayerScript : MonoBehaviour
     private Vector2 GetPointerInput(){
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
-        return Camera.main.ScreenToWorldPoint(mousePos);
-        
+        return Camera.main.ScreenToWorldPoint(mousePos); 
     }
     private void Spawn(){
         health.ResetHealth();
         player.transform.position = respawnPoint.transform.position;
+        health.isDead = false;
+    }
+    private void GetDirection(){
+        if(
+            direction.y > 0){ //north..
+            if(direction.x < 0){ //west
+                currDirection = "NORTHWEST";
+            }else if(direction.x > 0){ //east
+                currDirection = "NORTHEAST";
+            }else {//north   
+                currDirection = "NORTH";
+            }
 
+        }else if(
+            direction.y < 0){
+            if(direction.x < 0){ //west                
+                currDirection = "SOUTHWEST";
+            }else if (direction.x > 0){ //east;
+                currDirection = "SOUTHEAST";
+            }else { //south   
+                currDirection = "SOUTH";
+
+            }
+        }else{
+            if(direction.x < 0){ //west               
+                currDirection = "WEST";
+            }else if(direction.x > 0){  //east
+                currDirection  = "EAST";
+
+            }        
+        }
     }
 }
