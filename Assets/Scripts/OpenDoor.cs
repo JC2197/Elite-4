@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 Transform target;
 Vector2 selfPositionL = new Vector2(-3, -14);
 Vector2 selfPositionR = new Vector2(-2, -14);
@@ -24,3 +24,4 @@ public class OpenDoor : MonoBehaviour
         
     }
 }
+*/
