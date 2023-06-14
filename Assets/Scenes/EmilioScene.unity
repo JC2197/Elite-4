@@ -725,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  distanceToTarget: 0
 --- !u!114 &413189366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,6 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  distanceToTarget: 0
 --- !u!114 &535591110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,6 +1453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  distanceToTarget: 0
 --- !u!114 &742146082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2372,6 +2375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  distanceToTarget: 0
 --- !u!114 &1236753638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,10 +2861,10 @@ GameObject:
   - component: {fileID: 1483781033}
   - component: {fileID: 1483781032}
   - component: {fileID: 1483781030}
-  - component: {fileID: 1483781029}
   - component: {fileID: 1483781028}
   - component: {fileID: 1483781035}
   - component: {fileID: 1483781036}
+  - component: {fileID: 1483781037}
   m_Layer: 0
   m_Name: Melee Enemy
   m_TagString: Enemy
@@ -2884,26 +2888,6 @@ MonoBehaviour:
   maxHealth: 500
   currentHealth: 0
   isDead: 0
---- !u!95 &1483781029
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483781026}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62aee69103f6a2244855108b37831f96, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &1483781030
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3022,6 +3006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  distanceToTarget: 0
 --- !u!114 &1483781036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3036,6 +3021,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 1483781028}
   invincibilityTime: 0.5
+--- !u!95 &1483781037
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483781026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: faf8e95ecd587c542855679bef6dd886, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1579534600
 GameObject:
   m_ObjectHideFlags: 0
