@@ -31,8 +31,7 @@ public class enemyCollider : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other)
-    {
-        
+    {        
         if (other.gameObject.CompareTag("Enemy"))
         {
             // this can be used to push objects outside of others to stop clipping issues if needed
@@ -41,8 +40,7 @@ public class enemyCollider : MonoBehaviour
             Vector2 force = transform.position - other.transform.position; // force vector
             force.Normalize(); // normalize force vector to get direction only and trim magnitude
             rb.AddForce(force * magnitude);
-        }
-        
+        }        
     }
 
     /* 
