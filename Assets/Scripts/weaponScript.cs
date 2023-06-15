@@ -7,7 +7,7 @@ public class weaponScript : MonoBehaviour
 {
     public Vector2 PointerPosition {get;set;}
     public float delay = 0.5f;
-    private bool attackBlocked;
+    //private bool attackBlocked;
     PlayerScript player;
     private bool attacking = false;
     private float timer = 0f;
@@ -91,7 +91,7 @@ public class weaponScript : MonoBehaviour
     }
       private IEnumerator DelayAttack(){
         yield return new WaitForSeconds(delay);
-        attackBlocked = false;
+        //attackBlocked = false;
     }
     private void SwordSpriteAnimator(){
         if(player.currDirection == "NORTHWEST"){

@@ -11,9 +11,12 @@ public class EnemyChase : MonoBehaviour
     Vector2 moveDirection;
     private bool hasTarget = false;
     public float distanceToTarget;
+    private Animator meleeEnemyAnim;
+    public float aggroRange = 5f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        meleeEnemyAnim = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -28,17 +31,21 @@ public class EnemyChase : MonoBehaviour
     void Update()
     {
         distanceToTarget = Vector3.Distance(self, target.position);
-        if(distanceToTarget < 3f){
+        if(distanceToTarget < aggroRange){
             hasTarget = true;
         }
         transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y*.001f));
         if(target && hasTarget)
         {
             Vector2 direction = (target.position - transform.position).normalized;
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //not required
-            //rb.rotation = angle;  // Rotation is *not* required, depends on spriting
-            moveDirection = direction;
+            moveDirection = direction;            
         }
+    }
+
+    void Animate()
+    {
+        meleeEnemyAnim.SetFloat("MovementX", moveDirection.x);
+        meleeEnemyAnim.SetFloat("MovementY", moveDirection.y);
     }
 
     void FixedUpdate()
@@ -46,6 +53,8 @@ public class EnemyChase : MonoBehaviour
         if(target)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
-        }
+            Animate();
+            //rb.AddForce(moveDirection * 10f); //useful for anotehr enemy
+        }        
     }
 }
