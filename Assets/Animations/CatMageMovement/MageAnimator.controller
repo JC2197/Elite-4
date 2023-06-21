@@ -1,6 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1107 &-8519769075686636692
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MageAnimator
+  serializedVersion: 5
+  m_AnimatorParameters:
+  - m_Name: MovementX
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: MovementY
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  m_AnimatorLayers:
+  - serializedVersion: 5
+    m_Name: Base Layer
+    m_StateMachine: {fileID: 196071692080800006}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!1107 &196071692080800006
 AnimatorStateMachine:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -10,8 +44,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -8147505285405106696}
-    m_Position: {x: 250, y: 110, z: 0}
+    m_State: {fileID: 6532265301253815842}
+    m_Position: {x: 300, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,15 +55,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -8147505285405106696}
---- !u!1102 &-8147505285405106696
+  m_DefaultState: {fileID: 6532265301253815842}
+--- !u!1102 &6532265301253815842
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: meleeEnemyMovement
+  m_Name: mageEnemyMovement
   m_Speed: 0.05
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,13 +76,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -153849571870533182}
+  m_Motion: {fileID: 7743903995278952799}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!206 &-153849571870533182
+--- !u!206 &7743903995278952799
 BlendTree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +91,7 @@ BlendTree:
   m_Name: meleeEnemyMovement
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e1beeb56d1a3eac4898f828e8b07481a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 6adcb217bb68a1e47940dba3f8706384, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -65,7 +99,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 927c5c74a1f889a42bb505689a02e567, type: 2}
+    m_Motion: {fileID: 7400000, guid: 2a57769026c0d194a9e05f474d327bf1, type: 2}
     m_Threshold: 0.14285715
     m_Position: {x: 1, y: 1}
     m_TimeScale: 1
@@ -73,7 +107,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4a3e63cd55cd8934797219fea6342693, type: 2}
+    m_Motion: {fileID: 7400000, guid: e899ef3d6f09ec0489598ee8c507e41f, type: 2}
     m_Threshold: 0.2857143
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -81,7 +115,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b1c60da8ac77b604395ea17e00d3f70d, type: 2}
+    m_Motion: {fileID: 7400000, guid: fadddcf090542c448a388255f3d05321, type: 2}
     m_Threshold: 0.42857143
     m_Position: {x: -1, y: 1}
     m_TimeScale: 1
@@ -89,7 +123,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e338ce3e47e652c49a17f3400880b278, type: 2}
+    m_Motion: {fileID: 7400000, guid: 557f0e2941b77274f90c7c1ce65ccd01, type: 2}
     m_Threshold: 0.5714286
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -97,7 +131,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4bcf0b9ca3d55944fb5e98f36f3fd83e, type: 2}
+    m_Motion: {fileID: 7400000, guid: e7289dcb2ed1071489575b9923a36c82, type: 2}
     m_Threshold: 0.71428573
     m_Position: {x: -1, y: -1}
     m_TimeScale: 1
@@ -105,7 +139,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8cedace150888c04283fefef65e8cfb1, type: 2}
+    m_Motion: {fileID: 7400000, guid: 160f49c2b460bbf4ab48591299a5d191, type: 2}
     m_Threshold: 0.85714287
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -113,7 +147,7 @@ BlendTree:
     m_DirectBlendParameter: MovementX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 995ee329d7ccd5c458ec8d4b06c06d65, type: 2}
+    m_Motion: {fileID: 7400000, guid: 51c6a317c69c51746820f660ad45d081, type: 2}
     m_Threshold: 1
     m_Position: {x: 1, y: -1}
     m_TimeScale: 1
@@ -127,43 +161,3 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 1
---- !u!91 &9100000
-AnimatorController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: meleeEnemy
-  serializedVersion: 5
-  m_AnimatorParameters:
-  - m_Name: MovementX
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: MovementY
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: attackTrigger
-    m_Type: 9
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  m_AnimatorLayers:
-  - serializedVersion: 5
-    m_Name: Base Layer
-    m_StateMachine: {fileID: -8519769075686636692}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}

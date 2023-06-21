@@ -9,13 +9,15 @@ public class Health : MonoBehaviour
     public int currentHealth; 
     public bool isDead = false;
     // Start is called before the first frame update
-    void Start()
+
+    public void Start()
     {
-        healthbar = GetComponentInChildren<HealthBar>();
+
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
     }
-        public void TakeDamage(int damage){
+
+    public void TakeDamage(int damage){
         currentHealth -=damage;
         healthbar.SetHealth(currentHealth);
         
