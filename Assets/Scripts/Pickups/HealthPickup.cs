@@ -15,10 +15,8 @@ public class HealthPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            print("COLLIDEYES");
             if (health.currentHealth < health.maxHealth)
             {
-                print("HEALTHYES");
                 Destroy(gameObject);
                 health.currentHealth += healthBonus;
                 healthbar.SetHealth(health.currentHealth);

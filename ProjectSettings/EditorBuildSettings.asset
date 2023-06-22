@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c0ede4afc05bec14cacfb5518c29e69c
   - enabled: 1
-    path: Assets/Scenes/EmilioTestScene.unity
-    guid: ae4d32c7843721a4a9cbb416415acc76
+    path: Assets/Scenes/Sprint2 Demo.unity
+    guid: 99b6ba448f649054086e151523610a7c
   m_configObjects: {}
