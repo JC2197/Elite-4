@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3347619590702907205}
   - component: {fileID: 3347619590702907207}
   - component: {fileID: 3347619590702907204}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3347619590713866113}
   - component: {fileID: 3347619590713866115}
   - component: {fileID: 3347619590713866112}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 3347619591638772742}
   - component: {fileID: 3347619591638772743}
   - component: {fileID: 3347619591638772740}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 3347619592231136301}
   - component: {fileID: 3347619592231136290}
   - component: {fileID: 3347619592231136291}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 3347619592648136625}
   - component: {fileID: 3347619592648136633}
   - component: {fileID: 3347619592648136632}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Melee Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

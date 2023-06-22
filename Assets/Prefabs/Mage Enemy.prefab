@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5737052804407254926}
   - component: {fileID: 5737052804407254921}
   - component: {fileID: 5737052804407254920}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mage Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5737052804733294568}
   - component: {fileID: 5737052804733294574}
   - component: {fileID: 5737052804733294569}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 5737052805798389756}
   - component: {fileID: 5737052805798389759}
   - component: {fileID: 5737052805798389758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 5737052805839091252}
   - component: {fileID: 5737052805839091255}
   - component: {fileID: 5737052805839091254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 5737052805923701250}
   - component: {fileID: 5737052805923701248}
   - component: {fileID: 5737052805923701251}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
