@@ -6,7 +6,7 @@ public class enemyCollider : MonoBehaviour
 {
 
     public Health health;
-    private bool invincible = false;
+    //private bool invincible = false;
     public float invincibilityTime = .001f;
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,7 +20,7 @@ public class enemyCollider : MonoBehaviour
                 }
         }
     }
-
+    /*
     IEnumerator Invulnerability()
     {
         Color origColor = gameObject.GetComponent<Renderer>().material.color;
@@ -28,7 +28,7 @@ public class enemyCollider : MonoBehaviour
         yield return new WaitForSeconds(invincibilityTime);
         invincible = false;
     }
-
+    */
     private void OnTriggerStay2D(Collider2D other)
     {        
         if (other.gameObject.CompareTag("Enemy"))
