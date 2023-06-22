@@ -6,8 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Weapon
-  - Walls
-  - Exits
+  - PickupSpeed
   layers:
   - Default
   - TransparentFX
@@ -19,8 +18,8 @@ TagManager:
   - 
   - 
   - 
-  - PLAYER
-  - ENEMY
+  - 
+  - 
   - 
   - 
   - 

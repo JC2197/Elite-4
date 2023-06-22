@@ -4,45 +4,70 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
-
-    public Rigidbody2D body;
-    public Collider playerCollider;
+    public BaseCharacter characterStats;
+    private Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
     public Health health;
     private Animator anim;
-    public int maxHealth = 100;
-    public int currentHealth; 
-    
+    public float damage;
+    //private float moveSpeed;
+    public float moveSpeed;
+    // changing moveSpeed to public for Sprint2 demo
+    public int baseHealth;
+    private int currentHealth; 
+    private float strength;
+    private float stamina;
+    private float will;
+    private float intelligence;
+    private float dexterity;
+    private float armor;
+    private float magicResist;
     public string currDirection = "NORTH";
-    
     public bool isDead = false;
-    public float walkSpeed;
+
     public float frameRate;
     // Start is called before the first frame update
     float idleTime;
-    float timer;
     public Vector2 direction;
     private Vector2 pointerInput;
     private weaponScript weapon;
     
-
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnPoint;
-    private void Start(){
+
+    private void Awake(){
         weapon = GetComponentInChildren<weaponScript>();
         health = GetComponentInChildren<Health>();
-        Spawn();
-    }
-    private void Awake(){
         body = GetComponentInChildren<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+
+        strength = characterStats.strength;
+        stamina = characterStats.stamina;
+        intelligence = characterStats.intelligence;
+        dexterity = characterStats.dexterity;
+        will = characterStats.will;
+        
+        damage = characterStats.baseDamage + strength;
+        moveSpeed = characterStats.moveSpeed + dexterity;
+        baseHealth = characterStats.baseHealth + (int)stamina;
+        
+
+        health.maxHealth = baseHealth;
+        health.healthbar = GetComponentInChildren<HealthBar>();
+        currentHealth = health.maxHealth;
+        health.healthbar.SetMaxHealth(health.maxHealth);
+        
     }
+    private void Start(){
+        Spawn();
+    }
+   
     // Update is called once per frame
     void Update()
     {
-        GetDirection();
         if(health.isDead == false){ 
             //LINK UP WEAPON ACCESSORY WITH CURSOR
+            GetDirection();
             Move();
             Animate();
         }else{
@@ -58,18 +83,18 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("IsMoving", false);
         }else{
             direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
-            body.velocity = direction * walkSpeed * Time.fixedDeltaTime;
+            body.velocity = direction * moveSpeed * Time.fixedDeltaTime;
         }
     }
     private void Animate(){
         anim.SetFloat("MovementX", direction.x);
         anim.SetFloat("MovementY", direction.y);
     }
-    private Vector2 GetPointerInput(){
+    /*private Vector2 GetPointerInput(){
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mousePos); 
-    }
+    }*/
     private void Spawn(){
         health.ResetHealth();
         player.transform.position = respawnPoint.transform.position;

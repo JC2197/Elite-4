@@ -8,7 +8,7 @@ public class weaponScript : MonoBehaviour
     public Vector2 PointerPosition {get;set;}
     public float delay = 0.5f;
     //private bool attackBlocked;
-    PlayerScript player;
+    private PlayerScript player;
     private bool attacking = false;
     private float timer = 0f;
     private float timeToAttack = .25f;
