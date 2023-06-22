@@ -12,11 +12,7 @@ public class ExitDoor : MonoBehaviour
 
     public GameObject p;
     public GameObject m;
-
-    public Vector2Int LeftDoorPosition;
-    private static Vector3Int LPos;
-    private static Vector3Int RPos;
-
+    
     private static Vector3 DoorPos = new Vector3(0,0,0);
 
 
@@ -59,6 +55,7 @@ public class ExitDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    /*
         if(checkOpenCondition()) {
             if(!complete) {
                 doorFinder.Open();
@@ -70,5 +67,6 @@ public class ExitDoor : MonoBehaviour
                 complete = false;
             }
         }
+    */
     }
 }
