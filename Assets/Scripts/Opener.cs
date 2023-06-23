@@ -52,6 +52,7 @@ public class Opener : MonoBehaviour
         manager = Checkpoints.GetComponent<CheckpointManager>();
 
         grid = DoorMap.gameObject.GetComponentInParent<Grid>().gameObject;
+
         int i = 0;
         foreach(Vector3Int refPosition in refBounds.allPositionsWithin)
         {
