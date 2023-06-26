@@ -15,6 +15,7 @@ public class magicShot : MonoBehaviour
     private MageEnemyController mage;
     private float damage;
     public float scaleFactor = 2f;
+    public AudioSource PlayerTakeDamageRangedSFX;
 
     // Start is called before the first frame update
     public void Init(MageEnemyController instantiatingMage)
@@ -23,6 +24,7 @@ public class magicShot : MonoBehaviour
     }
     void Awake()
     {
+        PlayerTakeDamageRangedSFX = GetComponent<AudioSource>();
         transform.localScale *= scaleFactor;
         magicShotAnim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -51,10 +53,10 @@ public class magicShot : MonoBehaviour
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
                 if(player != null)
                 {
-                    magicShotAnim.Play("HitEffect");
-                    rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * 0;
-                    player.health.TakeDamage((int)mage.damage);
-                    
+                magicShotAnim.Play("HitEffect");
+                PlayerTakeDamageRangedSFX.Play();
+                rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * 0;
+                player.health.TakeDamage((int)mage.damage);
                 }
         }
     }

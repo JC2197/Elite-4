@@ -163,7 +163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &72020516
 PrefabInstance:
@@ -292,15 +292,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136631, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_Name
       value: Melee Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347619592648136633, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
+      propertyPath: EnemyTakeDamageSFX
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136639, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_RootOrder
@@ -686,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 5737052804407254915, guid: 3f7d98920e88efe4885c680c64972cf0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737052804407254921, guid: 3f7d98920e88efe4885c680c64972cf0, type: 3}
+      propertyPath: EnemyTakeDamageSFX
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5737052804407254923, guid: 3f7d98920e88efe4885c680c64972cf0, type: 3}
       propertyPath: m_Name
@@ -1311,6 +1319,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &347134269 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4898533974841129590, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+  m_PrefabInstance: {fileID: 4898533974632473419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &359817492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5737052804407254915, guid: 3f7d98920e88efe4885c680c64972cf0, type: 3}
@@ -1440,6 +1453,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth
@@ -1596,6 +1613,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth (1)
@@ -1802,15 +1823,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136631, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_Name
       value: Melee Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347619592648136633, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
+      propertyPath: EnemyTakeDamageSFX
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136639, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_RootOrder
@@ -1944,6 +1969,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3347619592648136639, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
   m_PrefabInstance: {fileID: 881651808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &555583184 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4898533975187465627, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+  m_PrefabInstance: {fileID: 4898533974632473419}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &559888594
 GameObject:
@@ -10571,6 +10601,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth (1)
@@ -19588,6 +19622,14 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealth
+      value: 
+      objectReference: {fileID: 555583184}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth
@@ -19849,6 +19891,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
+--- !u!1 &1328419622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328419623}
+  m_Layer: 0
+  m_Name: SoundEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1328419623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328419622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.7037032, y: -4.6721992, z: 4.0265574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329215842
 GameObject:
   m_ObjectHideFlags: 0
@@ -20042,6 +20115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1367635814}
   speed: 150
+  PickupSpeedSFX: {fileID: 1711660915}
 --- !u!1001 &1372050305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20061,6 +20135,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth
@@ -20782,11 +20860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136631, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_Name
@@ -20882,6 +20960,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth (2)
@@ -21097,11 +21179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136631, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_Name
@@ -21269,7 +21351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 311001527319927239, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 311001527319927239, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21311,6 +21393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 701864231414855526, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
+      propertyPath: PlayerDashSFX
+      value: 
+      objectReference: {fileID: 347134269}
     - target: {fileID: 4277157080592052835, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
       propertyPath: m_Name
       value: Character
@@ -21355,6 +21441,18 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 59716960}
+    - target: {fileID: 7118092321000725190, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 215a9a392497d3144a7ba10ba4b5f8ce, type: 3}
+    - target: {fileID: 7118092321000725190, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
+      propertyPath: PlayerAttack
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118092321000725190, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
+      propertyPath: PlayerAttackSFX
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7118092321000725211, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -21398,134 +21496,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4405059761742024414, guid: bb8006737e613e84992e6fcbf3a2375d, type: 3}
   m_PrefabInstance: {fileID: 1264347687}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1706823575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1706823577}
-  - component: {fileID: 1706823576}
-  m_Layer: 0
-  m_Name: Stage1Theme
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1706823576
+--- !u!82 &1711660915 stripped
 AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4898533973994732600, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+  m_PrefabInstance: {fileID: 4898533974632473419}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706823575}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 32c1917d18bf07d499f71837dabaf4ba, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 809b694943540624abc0677eb77e3daa, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1706823577
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706823575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1746483825
 GameObject:
   m_ObjectHideFlags: 0
@@ -21814,6 +21789,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth
@@ -21893,6 +21872,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 165
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: CheatPotion
@@ -23404,7 +23387,7 @@ Transform:
   - {fileID: 1431922079}
   - {fileID: 1178658848}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897887485
 PrefabInstance:
@@ -23423,11 +23406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136625, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 3347619592648136631, guid: 0689a675c6ae0e140b585c98ba2c8e02, type: 3}
       propertyPath: m_Name
@@ -23801,7 +23784,7 @@ RectTransform:
   - {fileID: 2090364718}
   - {fileID: 1948910628}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -24258,6 +24241,10 @@ PrefabInstance:
       propertyPath: healthBonus
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth (1)
@@ -24329,9 +24316,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 203202}
     - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
-      propertyPath: healthBonus
-      value: 25
-      objectReference: {fileID: 0}
+      propertyPath: PickupHealth
+      value: 
+      objectReference: {fileID: 555583184}
+    - target: {fileID: 9137689973483778177, guid: aa67d9eb32386db438698259a661e958, type: 3}
+      propertyPath: PickupHealthSFX
+      value: 
+      objectReference: {fileID: 555583184}
     - target: {fileID: 9137689973483778180, guid: aa67d9eb32386db438698259a661e958, type: 3}
       propertyPath: m_Name
       value: PickupHealth
@@ -24382,3 +24373,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa67d9eb32386db438698259a661e958, type: 3}
+--- !u!1001 &4898533974632473419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875474, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898533974052875484, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aac350d044dcddf4ab337826f5ee66e1, type: 3}

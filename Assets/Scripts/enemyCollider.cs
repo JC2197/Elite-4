@@ -8,15 +8,21 @@ public class enemyCollider : MonoBehaviour
     public Health health;
     //private bool invincible = false;
     public float invincibilityTime = .001f;
-    private void OnTriggerEnter2D(Collider2D other)
+    public AudioSource EnemyTakeDamageSFX;
+    void Awake()
     {
+        EnemyTakeDamageSFX = GetComponent<AudioSource>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+        {
             if (other.gameObject.CompareTag("Weapon"))
             {
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
                 if(player != null)
                 {
-                    health.TakeDamage((int)player.damage);
- 
+                EnemyTakeDamageSFX.Play();
+                health.TakeDamage((int)player.damage); 
                 }
         }
     }

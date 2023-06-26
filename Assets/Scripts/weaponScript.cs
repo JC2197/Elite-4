@@ -14,6 +14,12 @@ public class weaponScript : MonoBehaviour
     private float timeToAttack = .25f;
     playerCollider charCollider;
     private BoxCollider2D weaponCollider;
+    public AudioSource PlayerAttackSFX;
+
+    void Awake()
+    {
+        PlayerAttackSFX = GetComponent<AudioSource>();
+    }
 
     void Start(){        
         player = GetComponentInParent<PlayerScript>();
@@ -41,6 +47,7 @@ public class weaponScript : MonoBehaviour
         if (attacking){
             return;
         }
+        PlayerAttackSFX.Play();
         weaponCollider = GetComponent<BoxCollider2D>();
         weaponCollider.enabled = !weaponCollider.enabled;
 

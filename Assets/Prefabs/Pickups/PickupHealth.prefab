@@ -101,7 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 0}
   healthbar: {fileID: 0}
-  healthBonus: 20
+  healthBonus: 25
+  PickupHealthSFX: {fileID: 0}
 --- !u!70 &9137689973483778176
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

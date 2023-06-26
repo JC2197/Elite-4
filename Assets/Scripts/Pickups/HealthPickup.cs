@@ -5,11 +5,7 @@ public class HealthPickup : MonoBehaviour
     public Health health;
     public HealthBar healthbar;
     public int healthBonus = 50;
-
-    private void Awake()
-    {
-        //health = FindObjectOfType<Health>();
-    }
+    public AudioSource PickupHealthSFX;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +13,7 @@ public class HealthPickup : MonoBehaviour
         {
             if (health.currentHealth < health.maxHealth)
             {
+                PickupHealthSFX.Play();
                 Destroy(gameObject);
                 health.currentHealth += healthBonus;
                 healthbar.SetHealth(health.currentHealth);
