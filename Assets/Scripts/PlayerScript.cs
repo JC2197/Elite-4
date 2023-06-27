@@ -10,7 +10,9 @@ public class PlayerScript : MonoBehaviour
     public Health health;
     private Animator anim;
     public float damage;
-    private float moveSpeed;
+    //private float moveSpeed;
+    public float moveSpeed;
+    // changing moveSpeed to public for Sprint2 demo
     public int baseHealth;
     private int currentHealth; 
     private float strength;
