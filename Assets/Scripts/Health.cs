@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Get rid of SceneManagement after demo
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -25,15 +23,6 @@ public class Health : MonoBehaviour
         
         if(currentHealth<=0){
             isDead = true;
-            //for demo, just bring back to main menu
-            if (gameObject.CompareTag("Player") & isDead)
-            {
-                SceneManager.LoadScene(0);
-            }
-            if (gameObject.CompareTag("Enemy") & isDead)
-            {
-                Destroy(gameObject, 0);
-            }
         }
     }
     public void ResetHealth(){
