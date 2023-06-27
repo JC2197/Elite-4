@@ -23,10 +23,6 @@ public class Health : MonoBehaviour
         
         if(currentHealth<=0){
             isDead = true;
-            if (gameObject.CompareTag("Enemy") & isDead)
-            {
-                Destroy(gameObject, 0);
-            }
         }
     }
     public void ResetHealth(){

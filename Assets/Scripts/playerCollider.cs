@@ -33,7 +33,7 @@ public class playerCollider : MonoBehaviour
     }
 
     public IEnumerator AttackInvulnerability()
-    {        
+    {  
         invincible = true;
         yield return new WaitForSeconds(0.25f);
         invincible = false;
