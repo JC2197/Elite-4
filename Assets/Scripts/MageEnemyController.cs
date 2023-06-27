@@ -20,7 +20,7 @@ public class MageEnemyController : MonoBehaviour
     public float aggroRange = 5f;
     private float shotCooldown;
     public float startShotCooldown = 10f;
-    bool hasFired = true;
+    bool hasFired = false;
     public Health health;
     private bool invincible = false;
     public float invincibilityTime = .001f;
@@ -63,7 +63,7 @@ public class MageEnemyController : MonoBehaviour
                 moveDirection = direction;
                 rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
                 Animate();     
-            }else{
+            }else if(target && hasTarget){
                 Vector2 direction = (target.position - transform.position).normalized;
                 moveDirection = direction;
                 rb.velocity = new Vector2(moveDirection.x, moveDirection.y)* 0;
