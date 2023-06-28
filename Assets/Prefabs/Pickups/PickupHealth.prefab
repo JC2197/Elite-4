@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9d4a396ea736a4b86268b9b7c8175b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
+  health: {fileID: 7118092320848880480, guid: 28de37bd8eb86a44bb41b365c23c3b61, type: 3}
   healthbar: {fileID: 0}
   healthBonus: 50
   PickupHealthSFX: {fileID: 0}
