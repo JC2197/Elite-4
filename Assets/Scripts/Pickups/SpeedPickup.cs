@@ -8,7 +8,7 @@ public class SpeedPickup : MonoBehaviour
     public float speed = 5f; //does not seem to actually determine anything at the moment?
     private float boostTimer = 2f;
     private bool boosting = false;
-
+    public AudioSource PickupSpeedSFX;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +16,7 @@ public class SpeedPickup : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("PickupSpeed"))
             {
+                PickupSpeedSFX.Play();
                 Destroy(collision.gameObject);
                 StartCoroutine(PickupSpeed());
                 /*

@@ -12,6 +12,7 @@ public class CharacterDash : MonoBehaviour
     private float cooldownTimer;
     private bool isDashing = false;
     private bool isCooldown = false;
+    public AudioSource PlayerDashSFX;
 
     public Rigidbody2D body;
 
@@ -52,6 +53,7 @@ public class CharacterDash : MonoBehaviour
     }
      private void StartDash()
     {
+        PlayerDashSFX.Play();
         isDashing = true;
         dashTimer = dashDuration;
         cooldownTimer = dashCooldown;
