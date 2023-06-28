@@ -76,11 +76,7 @@ public class UIManager : MonoBehaviour
 
     public void ResetTheLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void backToMainMenu()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
 }
