@@ -71,5 +71,4 @@ public class MainMenu : MonoBehaviour
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
-
 }
