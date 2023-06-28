@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: c0ede4afc05bec14cacfb5518c29e69c
   - enabled: 1
-    path: Assets/Scenes/Sprint2 Demo.unity
-    guid: 99b6ba448f649054086e151523610a7c
+    path: Assets/Scenes/LEVEL 01 FINAL.unity
+    guid: 6cc4e1c5460d6a344a14ebca4f9029d0
+  - enabled: 1
+    path: Assets/Scenes/LEVEL 02 FINAL.unity
+    guid: 80ceeb083dcf33a4e8749fdde7780544
+  - enabled: 1
+    path: Assets/Scenes/LEVEL 03 FINAL.unity
+    guid: 7f7869141a3b01a49b2981d55a7d669a
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 58464b2782f2093429611d11f00ac5c8
   m_configObjects: {}

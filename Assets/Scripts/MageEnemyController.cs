@@ -17,14 +17,15 @@ public class MageEnemyController : MonoBehaviour
     public GameObject magicShot;
     private Canvas canvas;
     public float damage;
-    public float aggroRange = 5f;
+    public float aggroRange = 8f;
     private float shotCooldown;
     public float startShotCooldown = 10f;
     bool hasFired = false;
     public Health health;
     private bool invincible = false;
-    public float invincibilityTime = .001f;
-    
+    public float invincibilityTime = .5f;
+    public AudioSource EnemyTakeDamageSFX;
+
     private void Awake()
     {
         health = GetComponent<Health>();
@@ -33,6 +34,7 @@ public class MageEnemyController : MonoBehaviour
         damage = enemyStats.magicDamage + enemyStats.intelligence;
         shotCooldown = startShotCooldown;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        EnemyTakeDamageSFX = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -99,25 +101,31 @@ public class MageEnemyController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!invincible)
+        {
             if (other.gameObject.CompareTag("Weapon"))
             {
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
-                if(player != null)
+                if (player != null)
                 {
+                    EnemyTakeDamageSFX.Play();
                     health.TakeDamage((int)player.damage);
- 
+                    StartCoroutine(Invulnerability());
                 }
+            }
         }
     }
     IEnumerator Invulnerability()
     {
         Color origColor = gameObject.GetComponent<Renderer>().material.color;
         invincible = true;
+        gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         yield return new WaitForSeconds(invincibilityTime);
         invincible = false;
+        gameObject.GetComponent<Renderer>().material.color = origColor;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D other)
     {        
         if (other.gameObject.CompareTag("Enemy"))
         {

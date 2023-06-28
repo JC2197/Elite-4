@@ -14,7 +14,7 @@ public class playerCollider : MonoBehaviour
         PlayerTakeDamageSFX = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (!invincible)
         {            
@@ -40,33 +40,20 @@ public class playerCollider : MonoBehaviour
     public IEnumerator AttackInvulnerability()
     {  
         invincible = true;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.10f);
         invincible = false;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        /*
+    // Code is used below to prevent player from standing still and taking no damage
+    private void OnCollisionStay2D(Collision2D other)
+    {        
         if (other.gameObject.CompareTag("Enemy") && !invincible)
         {
-            // this can be used to push objects outside of others to stop clipping issues if needed
             Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            var magnitude = 500; // how far is character knocked back
-            Vector2 force = transform.position - other.transform.position; // force vector
-            force.Normalize(); // normalize force vector to get direction only and trim magnitude
+            var magnitude = 200;
+            Vector2 force = transform.position - other.transform.position;
+            force.Normalize();
             rb.AddForce(force * magnitude);            
-        }
-        */
+        }        
     }
-
-    /* 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            print("EXIT");
-        }
-    }
-    */
-
 }

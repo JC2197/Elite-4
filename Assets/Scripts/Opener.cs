@@ -70,11 +70,11 @@ public class Opener : MonoBehaviour
 
         foreach(TileBase closed in closedTiles)
         {
-            Debug.Log("CLOSED " + closedTiles.IndexOf(closed) + " : " + closed.name);
+            //Debug.Log("CLOSED " + closedTiles.IndexOf(closed) + " : " + closed.name);
         }
         foreach(TileBase opened in openTiles)
         {
-            Debug.Log("OPENED : " + opened.name);
+            //Debug.Log("OPENED : " + opened.name);
         }
 
         
@@ -90,7 +90,7 @@ public class Opener : MonoBehaviour
         int x = 0;
         foreach(TileBase doorTile in doorTiles) 
         {
-            Debug.Log("DOOR: " + doorTile.name + " POS: " + doorTilePositions[x]);
+            //Debug.Log("DOOR: " + doorTile.name + " POS: " + doorTilePositions[x]);
             x++;
         }
 
