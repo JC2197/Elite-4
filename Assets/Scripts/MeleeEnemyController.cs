@@ -16,12 +16,14 @@ public class MeleeEnemyController : MonoBehaviour
     public Health health;
     public float aggroRange = 5f;
     private bool invincible = false;
-    public float invincibilityTime = .001f;
+    public float invincibilityTime = 0.5f;
+    public AudioSource EnemyTakeDamageSFX;
     private void Awake()
     {
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         meleeEnemyAnim = GetComponent<Animator>();
+        EnemyTakeDamageSFX = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -65,8 +67,7 @@ public class MeleeEnemyController : MonoBehaviour
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
             Animate();
-            //rb.AddForce(moveDirection * 10f); //useful for anotehr enemy
-        }        
+        }
     }
 
     public void DestroyAfterDeath()
@@ -83,13 +84,18 @@ public class MeleeEnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!invincible)
+        {
             if (other.gameObject.CompareTag("Weapon"))
             {
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
-                if(player != null)
+                if (player != null)
                 {
+                    EnemyTakeDamageSFX.Play();
+                    StartCoroutine(Invulnerability());
                     health.TakeDamage((int)player.damage);
                 }
+            }
         }
     }
 
@@ -97,21 +103,10 @@ public class MeleeEnemyController : MonoBehaviour
     {
         Color origColor = gameObject.GetComponent<Renderer>().material.color;
         invincible = true;
+        gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         yield return new WaitForSeconds(invincibilityTime);
         invincible = false;
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {        
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // this can be used to push objects outside of others to stop clipping issues if needed
-            Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-            var magnitude = 10; // how far is character knocked back
-            Vector2 force = transform.position - other.transform.position; // force vector
-            force.Normalize(); // normalize force vector to get direction only and trim magnitude
-            rb.AddForce(force * magnitude);
-        }        
+        gameObject.GetComponent<Renderer>().material.color = origColor;
     }
 
 }

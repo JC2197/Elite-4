@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 5737052804407254924}
   - component: {fileID: 5737052804407254927}
   - component: {fileID: 5737052804407254926}
-  - component: {fileID: 5737052804407254921}
   - component: {fileID: 5737052804407254920}
   - component: {fileID: -4650730531486259932}
   m_Layer: 11
@@ -199,7 +198,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.000405138, y: -0.04307482}
@@ -222,8 +221,11 @@ MonoBehaviour:
   distanceToTarget: 0
   magicShot: {fileID: 2135345232408941099, guid: 1771b8a3566544d4e8eaaecb638b95b8, type: 3}
   damage: 0
-  aggroRange: 5
+  aggroRange: 8
   startShotCooldown: 2
+  health: {fileID: 0}
+  invincibilityTime: 0.5
+  EnemyTakeDamageSFX: {fileID: 0}
 --- !u!114 &5737052804407254926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,24 +239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 5737052805798389758}
-  maxHealth: 200
-  currentHealth: 200
+  maxHealth: 100
+  currentHealth: 0
   isDead: 0
---- !u!114 &5737052804407254921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5737052804407254923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5465917cdf342e4a8e3c19e972345c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 5737052804407254926}
-  invincibilityTime: 0.1
-  EnemyTakeDamageSFX: {fileID: 0}
 --- !u!95 &5737052804407254920
 Animator:
   serializedVersion: 4

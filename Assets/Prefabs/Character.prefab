@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7118092320848880481}
   - component: {fileID: 701864231414855526}
   - component: {fileID: 1467647749140244280}
+  - component: {fileID: 791153044}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -189,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 7118092321924875793}
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 180
+  currentHealth: 180
   isDead: 0
 --- !u!114 &7118092320848880481
 MonoBehaviour:
@@ -320,6 +321,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &791153044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4277157080592052835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c89a41ec2e91cb459e4f6b0bd9190cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7118092320848880486}
+  speedBoost: 162
+  PickupSpeedSFX: {fileID: 0}
 --- !u!1 &7118092321000725211
 GameObject:
   m_ObjectHideFlags: 0

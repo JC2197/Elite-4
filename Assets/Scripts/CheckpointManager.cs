@@ -17,7 +17,7 @@ public class CheckpointManager : MonoBehaviour
 
         Transform child = getClosestCheckpoint();
 
-        Debug.Log("CURRENT CHECKPOINT: " + child.name);
+        //Debug.Log("CURRENT CHECKPOINT: " + child.name);
 
         Checkpoint childScript = child.GetComponent<Checkpoint>();
         Collider2D childCol = child.GetComponent<Collider2D>();
