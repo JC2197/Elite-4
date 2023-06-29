@@ -8,7 +8,8 @@ public class playerCollider : MonoBehaviour
     public Health health;
     private bool invincible = false;
     public float invincibilityTime = 1f;
-    public AudioSource PlayerTakeDamageSFX;
+    public AudioSource PlayerTakeDamageSFX;  
+
     void Awake()
     {
         PlayerTakeDamageSFX = GetComponent<AudioSource>();
@@ -28,19 +29,19 @@ public class playerCollider : MonoBehaviour
     }
 
     public IEnumerator Invulnerability()
-    {
-        Color origColor = gameObject.GetComponent<Renderer>().material.color;
+    {        
+        //Color origColor = gameObject.GetComponent<Renderer>().material.color;
+        //gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         invincible = true;
-        gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         yield return new WaitForSeconds(invincibilityTime);
         invincible = false;
-        gameObject.GetComponent<Renderer>().material.color = origColor;
+        //gameObject.GetComponent<Renderer>().material.color = origColor;        
     }
 
     public IEnumerator AttackInvulnerability()
     {  
         invincible = true;
-        yield return new WaitForSeconds(0.10f);
+        yield return new WaitForSeconds(0.01f);
         invincible = false;
     }
 

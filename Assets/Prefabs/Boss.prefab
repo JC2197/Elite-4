@@ -428,6 +428,7 @@ MonoBehaviour:
   body: {fileID: 3861770096912272798}
   spriteRenderer: {fileID: 3861770096912272795}
   health: {fileID: 0}
+  boss2: {fileID: 0}
   idleSprites:
   - {fileID: -1770926890, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
   - {fileID: -1747053256, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
@@ -436,6 +437,8 @@ MonoBehaviour:
   - {fileID: -534610411, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
   - {fileID: 1499713855, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
   - {fileID: -513876032, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  transitionSprites: []
+  distanceToTarget: 0
   frameRate: 3
   damage: 0
 --- !u!114 &3861770096912272789

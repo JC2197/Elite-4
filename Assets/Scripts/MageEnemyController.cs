@@ -114,7 +114,7 @@ public class MageEnemyController : MonoBehaviour
                 {
                     EnemyTakeDamageSFX.Play();
                     health.TakeDamage((int)player.damage);
-                    StartCoroutine(Invulnerability());
+                    //StartCoroutine(Invulnerability());
                 }
             }
         //}

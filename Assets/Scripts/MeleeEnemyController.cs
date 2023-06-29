@@ -87,7 +87,7 @@ public class MeleeEnemyController : MonoBehaviour
                 if (player != null)
                 {
                     EnemyTakeDamageSFX.Play();
-                    StartCoroutine(Invulnerability());
+                    //StartCoroutine(Invulnerability());
                     health.TakeDamage((int)player.damage);
                 }
             }
