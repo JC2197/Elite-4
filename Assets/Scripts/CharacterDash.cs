@@ -13,11 +13,12 @@ public class CharacterDash : MonoBehaviour
     private bool isDashing = false;
     private bool isCooldown = false;
     public AudioSource PlayerDashSFX;
-
+    private Animator playerAnim;
     public Rigidbody2D body;
 
     private void Awake()
     {
+        playerAnim = GetComponentInParent<Animator>();
         body = GetComponent<Rigidbody2D>();
     }
 
@@ -53,6 +54,7 @@ public class CharacterDash : MonoBehaviour
     }
      private void StartDash()
     {
+        playerAnim.Play("PlayerDash");
         PlayerDashSFX.Play();
         isDashing = true;
         dashTimer = dashDuration;
@@ -62,6 +64,7 @@ public class CharacterDash : MonoBehaviour
 
     private void StopDash()
     {
+        playerAnim.Play("8wayMovement");
         isDashing = false;
         body.velocity = Vector3.zero;
     }

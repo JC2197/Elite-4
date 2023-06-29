@@ -266,10 +266,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3861770096912272794}
   - component: {fileID: 3861770096912272795}
-  - component: {fileID: 3861770096912272793}
   - component: {fileID: 3861770096912272798}
-  - component: {fileID: 3861770096912272789}
   - component: {fileID: 3861770096912272788}
+  - component: {fileID: 3861770096912272793}
+  - component: {fileID: 3861770096912272789}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -345,30 +345,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3861770096912272793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861770096912272799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 242a59ae57711b44885a5b050d12e035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 3861770096912272798}
-  spriteRenderer: {fileID: 3861770096912272795}
-  health: {fileID: 0}
-  idleSprites:
-  - {fileID: -1770926890, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  - {fileID: -1747053256, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  - {fileID: -1964753677, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  hurtSprites:
-  - {fileID: -534610411, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  - {fileID: 1499713855, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  - {fileID: -513876032, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
-  frameRate: 3
 --- !u!50 &3861770096912272798
 Rigidbody2D:
   serializedVersion: 4
@@ -390,22 +366,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3861770096912272789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861770096912272799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333a8b3bc21f95b4e8cf2ba5d91b048e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 3861770096757627932}
-  maxHealth: 450
-  currentHealth: 0
-  isDead: 0
 --- !u!68 &3861770096912272788
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -453,6 +413,47 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3861770096912272793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861770096912272799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242a59ae57711b44885a5b050d12e035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 3861770096912272798}
+  spriteRenderer: {fileID: 3861770096912272795}
+  health: {fileID: 0}
+  idleSprites:
+  - {fileID: -1770926890, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  - {fileID: -1747053256, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  - {fileID: -1964753677, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  hurtSprites:
+  - {fileID: -534610411, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  - {fileID: 1499713855, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  - {fileID: -513876032, guid: 2facb260a4d1e234c86e4c530e4e5dd9, type: 3}
+  frameRate: 3
+  damage: 0
+--- !u!114 &3861770096912272789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861770096912272799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 333a8b3bc21f95b4e8cf2ba5d91b048e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 3861770096757627932}
+  maxHealth: 450
+  currentHealth: 0
+  isDead: 0
 --- !u!1 &3861770097355299733
 GameObject:
   m_ObjectHideFlags: 0

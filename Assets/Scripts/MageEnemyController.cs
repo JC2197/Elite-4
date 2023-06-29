@@ -15,6 +15,7 @@ public class MageEnemyController : MonoBehaviour
     private Animator mageEnemyAnim;
     private SpriteRenderer spriteRenderer;
     public GameObject magicShot;
+    private Collider2D coll;
     private Canvas canvas;
     public float damage;
     public float aggroRange = 8f;
@@ -28,6 +29,7 @@ public class MageEnemyController : MonoBehaviour
 
     private void Awake()
     {
+        coll = GetComponent<Collider2D>();
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         mageEnemyAnim = GetComponent<Animator>();
@@ -39,6 +41,7 @@ public class MageEnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         canvas = GetComponentInChildren<Canvas>();
         GameObject player = GameObject.Find("Character");
         target = player.transform;
@@ -49,6 +52,7 @@ public class MageEnemyController : MonoBehaviour
     void Update()
     {
         if(health.isDead){
+            coll.enabled = false;
             canvas.enabled = false;
             mageEnemyAnim.Play("MageEnemyDeath");
         }else{
@@ -101,8 +105,8 @@ public class MageEnemyController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!invincible)
-        {
+        //if (!invincible)
+        //{
             if (other.gameObject.CompareTag("Weapon"))
             {
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
@@ -113,15 +117,15 @@ public class MageEnemyController : MonoBehaviour
                     StartCoroutine(Invulnerability());
                 }
             }
-        }
+        //}
     }
     IEnumerator Invulnerability()
     {
         Color origColor = gameObject.GetComponent<Renderer>().material.color;
-        invincible = true;
+        //invincible = true;
         gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         yield return new WaitForSeconds(invincibilityTime);
-        invincible = false;
+        //invincible = false;
         gameObject.GetComponent<Renderer>().material.color = origColor;
     }
 
@@ -141,7 +145,7 @@ public class MageEnemyController : MonoBehaviour
     {
         Destroy(gameObject);
     }
-        public void Enlarge()
+    public void Enlarge()
     {
         Vector3 newScale = transform.localScale;
         newScale.x *= 3;

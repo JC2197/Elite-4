@@ -10,6 +10,7 @@ public class MeleeEnemyController : MonoBehaviour
     Vector3 self;
     Vector2 moveDirection;
     private Canvas canvas;
+    private Collider2D coll;
     private bool hasTarget = false;
     public float distanceToTarget;
     private Animator meleeEnemyAnim;
@@ -20,6 +21,7 @@ public class MeleeEnemyController : MonoBehaviour
     public AudioSource EnemyTakeDamageSFX;
     private void Awake()
     {
+        coll = GetComponent<Collider2D>();
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         meleeEnemyAnim = GetComponent<Animator>();
@@ -40,6 +42,7 @@ public class MeleeEnemyController : MonoBehaviour
     {
         if(health.isDead){
             canvas.enabled = false;
+            coll.enabled = false;
             meleeEnemyAnim.Play("skeletonDeath");
         }else{
             distanceToTarget = Vector3.Distance(self, target.position);
@@ -50,7 +53,9 @@ public class MeleeEnemyController : MonoBehaviour
             if(target && hasTarget)
             {
                 Vector2 direction = (target.position - transform.position).normalized;
-                moveDirection = direction;            
+                moveDirection = direction;
+                rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            Animate();            
             }
         }
     }
@@ -60,16 +65,6 @@ public class MeleeEnemyController : MonoBehaviour
         meleeEnemyAnim.SetFloat("MovementX", moveDirection.x);
         meleeEnemyAnim.SetFloat("MovementY", moveDirection.y);
     }
-
-    void FixedUpdate()
-    {
-        if(target)
-        {
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
-            Animate();
-        }
-    }
-
     public void DestroyAfterDeath()
     {
         Destroy(gameObject);
@@ -84,8 +79,8 @@ public class MeleeEnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!invincible)
-        {
+        //if (!invincible)
+        //{
             if (other.gameObject.CompareTag("Weapon"))
             {
                 PlayerScript player = other.gameObject.GetComponentInParent<PlayerScript>();
@@ -96,16 +91,16 @@ public class MeleeEnemyController : MonoBehaviour
                     health.TakeDamage((int)player.damage);
                 }
             }
-        }
+        //}
     }
 
     IEnumerator Invulnerability()
     {
         Color origColor = gameObject.GetComponent<Renderer>().material.color;
-        invincible = true;
+        //invincible = true;
         gameObject.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
         yield return new WaitForSeconds(invincibilityTime);
-        invincible = false;
+        //invincible = false;
         gameObject.GetComponent<Renderer>().material.color = origColor;
     }
 

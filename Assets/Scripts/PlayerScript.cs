@@ -24,7 +24,6 @@ public class PlayerScript : MonoBehaviour
     private float magicResist;
     public string currDirection = "NORTH";
     public bool isDead = false;
-
     public float frameRate;
     // Start is called before the first frame update
     float idleTime;
