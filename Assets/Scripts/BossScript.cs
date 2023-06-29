@@ -19,6 +19,7 @@ public class BossScript : MonoBehaviour
     public float distanceToTarget;
     public float frameRate;
     private float idleTime;
+    private float waitingTime;
     public float damage;
     bool casting = false;
     private Canvas canvas;
@@ -35,13 +36,14 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Debug.Log(idleTime);
         if(health.isDead){
             canvas.enabled = false;
             List<Sprite> actions = Animate();
             if(actions != null)
             {
-                float playTime = Time.time - idleTime;
+                float playTime = Time.time - waitingTime;
                 int frame = (int)((playTime * frameRate) % actions.Count);
                 spriteRenderer.sprite = actions[frame];
             } else {
@@ -49,6 +51,7 @@ public class BossScript : MonoBehaviour
             }
             newPhase();
         }else{
+            waitingTime = Time.time;
             GameObject player = GameObject.Find("Character");
             self = transform.position;
             target = player.transform;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossPhase2Script : MonoBehaviour
 {
+    private float waitingTime;
     public float moveSpeed;
     public float damage;
     public SpriteRenderer spriteRenderer;
@@ -79,13 +80,14 @@ public class BossPhase2Script : MonoBehaviour
             actions = Dying();
                 if(actions != null)
                 {
-                    float playTime = Time.time - idleTime;
+                    float playTime = Time.time - waitingTime;
                     int frame = (int)((playTime * frameRate) % actions.Count);
                     spriteRenderer.sprite = actions[frame];
                 }
             canvas.enabled = false;
             StartCoroutine(dyingWait());  
         }else{
+            waitingTime = Time.time;
             if(!hasTarget){
                 GameObject player = GameObject.Find("Character");
                 if(distanceToTarget < aggroRange){
